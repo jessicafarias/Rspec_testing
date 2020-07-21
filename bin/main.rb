@@ -12,7 +12,6 @@ puts '*********************************'.red
 user = []
 board = Board.new
 
-puts board.winner([[1,2,3],["X","X","X"],[7, 8, 9]])
 2.times do |i|
   print "User #{i + 1}: Please write your name: "
   name = gets.chomp

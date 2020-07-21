@@ -44,4 +44,25 @@ describe Board do
         end
 
     end
+
+    describe "#update_board" do
+        it "Override the board with the choosen input" do
+            expect(board.update_board(1,"X")).to eql("X")
+        end
+    end
+
+    describe "#invalid_input" do
+        it "Verify the input has no more than 1 character" do
+            expect(board.invalid_input(12)).to be true   
+        end
+        it "Verify the input is not a letter" do
+            expect(board.invalid_input("a")).to be true   
+        end
+        it "Verify the input is available" do
+            board.update_board(1,"X")
+            expect(board.invalid_input(1)).to be true 
+        end
+    end
+
+
 end
