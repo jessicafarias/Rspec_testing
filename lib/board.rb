@@ -4,7 +4,7 @@ class Board
   attr_reader :symb, :counter, :b, :symbols
 
   def initialize
-    @b = Array.new(3) { |i| Array.new(3) { |j| ((i * 3 + j + 1)).to_s.blue } }
+    @b = Array.new(3) { |i| Array.new(3) { |j| ((i * 3 + j + 1)).to_s.blue} }
     @counter = 9
     @symb = ''
     @symbols = %w[X O]

@@ -1,7 +1,37 @@
 require './lib/board'
+require './lib/user'
+
+describe User do
+  describe '#initialize' do
+    user = User.new("X","nombre")
+    it "Verify initialize name works" do
+      expect(user.name).to eql("nombre")
+    end
+
+    it "Verify initialize symbol works" do
+      expect(user.symb).to eql("X")
+    end
+  end
+end
 
 describe Board do
   board = Board.new
+
+  describe '#initialize' do
+    it "Verify initialize array works" do
+      expect(board.b).to eql([["\e[0;34;49m1\e[0m", "\e[0;34;49m2\e[0m", "\e[0;34;49m3\e[0m"], ["\e[0;34;49m4\e[0m", "\e[0;34;49m5\e[0m", "\e[0;34;49m6\e[0m"], ["\e[0;34;49m7\e[0m", "\e[0;34;49m8\e[0m", "\e[0;34;49m9\e[0m"]])
+    end
+    it "Verify initialize counter works" do
+      expect(board.counter).to eql(9)
+    end
+    it "Verify initialize symb works" do
+      expect(board.symb).to eql('')
+    end
+    it "Verify initialize symbols works" do
+      expect(board.symbols).to eql(%w[X O])
+    end
+
+  end
 
   describe '#turn' do
     board1 = Board.new
