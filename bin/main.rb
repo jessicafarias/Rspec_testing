@@ -4,13 +4,13 @@ require 'colorize'
 require_relative '../lib/user.rb'
 require_relative '../lib/board.rb'
 
-
-
 puts '*********************************'.red
 puts '****'.red + '      TIC TAC TOE        ' + '****'.red
 puts '*********************************'.red
 user = []
 board = Board.new
+
+p board.display
 
 2.times do |i|
   print "User #{i + 1}: Please write your name: "
@@ -40,5 +40,4 @@ else
   puts "#{user[i].name} is the WINNER".green
 end
 
-
-puts board.winner([[1,2,3],["X","X","X"],[7, 8, 9]])
+puts board.winner([[1, 2, 3], %w[X X X], [7, 8, 9]])
