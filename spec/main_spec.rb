@@ -98,14 +98,12 @@ describe Board do
     end
 
     it 'check if someone does not win on the first row' do
-      expect(board.winner([['X',2, 'X'], [4, 5, 6], [7, 8, 9]])).to be false
+      expect(board.winner([['X', 2, 'X'], [4, 5, 6], [7, 8, 9]])).to be false
     end
 
     it 'check if someone does not win on the first column' do
-      expect(board.winner([['X',2, 3], ['X', 5, 6], [7, 8, 9]])).to be false
+      expect(board.winner([['X', 2, 3], ['X', 5, 6], [7, 8, 9]])).to be false
     end
-
-
   end
 
   describe '#invalid_input' do
