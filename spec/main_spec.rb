@@ -11,6 +11,10 @@ describe User do
     it 'Verify initialize symbol works' do
       expect(user.symb).to eql('X')
     end
+
+    it 'Verify do not initialize with wrong symbol' do
+      expect(user.symb).not_to eql('0')
+    end
   end
 end
 
@@ -92,6 +96,16 @@ describe Board do
     it 'check if someone wins on the 135° diagonal' do
       expect(board.winner([[1, 2, 'X'], [4, 'X', 6], ['X', 8, 9]])).to be true
     end
+
+    it 'check if someone does not win on the first row' do
+      expect(board.winner([['X',2, 'X'], [4, 5, 6], [7, 8, 9]])).to be false
+    end
+
+    it 'check if someone does not win on the first column' do
+      expect(board.winner([['X',2, 3], ['X', 5, 6], [7, 8, 9]])).to be false
+    end
+
+
   end
 
   describe '#invalid_input' do
@@ -104,6 +118,12 @@ describe Board do
     it 'Verify the input is available' do
       board.update_board(1, 'X')
       expect(board.invalid_input(1)).to be true
+    end
+    it 'Verify the input 2 is correct' do
+      expect(board.invalid_input(2)).to be false
+    end
+    it 'Verify the input 3 is correct' do
+      expect(board.invalid_input(2)).to be false
     end
   end
 

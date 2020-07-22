@@ -21,7 +21,9 @@ gem install colorize
 Git clone git@github.com:jessicafarias/Rspec_testing.git
 ``` 
 
-## Commands
+## RUN TEST
+
+To run the Rspec and check for testing cases write the following command on the root folder.
 
 ```ruby 
 rspec 
